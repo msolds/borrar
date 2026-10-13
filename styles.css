@@ -47,8 +47,7 @@ button { cursor: pointer; }
 .button-white:hover { background: #f1f5ff; }
 .button-full { width: 100%; margin-top: 9px; }
 
-.layout { max-width: 1500px; margin: auto; }
-.sidebar { position: fixed; top: 68px; bottom: 0; width: 245px; padding: 34px 20px 22px max(24px, calc((100vw - 1500px)/2 + 25px)); overflow-y: auto; border-right: 1px solid var(--line); background: #f8f9fc; }
+.sidebar { position: fixed; top: 68px; bottom: 0; left: 0; width: 245px; padding: 34px 20px 22px 24px; overflow-y: auto; border-right: 1px solid var(--line); background: #f8f9fc; }
 .sidebar-heading, .eyebrow { color: #8490a3; font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .105em; }
 .sidebar-heading { margin: 0 0 16px 11px; }
 .course-nav { display: grid; gap: 4px; }
@@ -297,7 +296,7 @@ kbd { padding: 1px 4px; border: 1px solid #dce2eb; border-radius: 3px; backgroun
 .site-footer > a:last-child:hover { color: var(--blue); }
 
 @media (min-width: 1300px) {
-  main { padding-right: 7%; padding-left: 7%; }
+  main { padding-right: max(7%, calc((100vw - 245px - 1180px) / 2)); padding-left: max(7%, calc((100vw - 245px - 1180px) / 2)); }
 }
 @media (max-width: 1120px) {
   .sidebar { width: 205px; padding-right: 15px; padding-left: 18px; }
