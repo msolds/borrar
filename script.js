@@ -24,7 +24,7 @@
   function updateProgress() {
     const checkedCount = checks.filter((check) => check.checked).length;
     const percent = totalChecks ? Math.round((checkedCount / totalChecks) * 100) : 0;
-    progressFill.style.width = `${percent}%`;
+    progressFill.style.transform = `scaleX(${percent / 100})`;
     progressPercent.textContent = `${percent}%`;
     progressCaption.textContent = checkedCount === totalChecks
       ? "¡Has completado todas las actividades!"
