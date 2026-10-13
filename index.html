@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="Unidad práctica de autoaprendizaje: prepara y despliega una aplicación Flask con Docker de forma segura.">
+  <title>Despliegue seguro · Aula DevOps</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Aula DevOps, inicio">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span>Aula <strong>DevOps</strong></span>
+    </a>
+    <div class="topbar-right">
+      <span class="course-label">UNIDAD PRÁCTICA <span aria-hidden="true">·</span> 2–4 H</span>
+      <a class="button button-small button-outline" href="#laboratorio">Abrir laboratorio <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Navegación del curso">
+      <div class="sidebar-heading">TU RECORRIDO</div>
+      <nav class="course-nav">
+        <a class="nav-link active" href="#inicio"><span class="nav-icon">⌂</span> Inicio</a>
+        <a class="nav-link" href="#preparar"><span class="nav-number">01</span> Preparar la app</a>
+        <a class="nav-link" href="#contenedor"><span class="nav-number">02</span> Endurecer Docker</a>
+        <a class="nav-link" href="#desplegar"><span class="nav-number">03</span> Desplegar y verificar</a>
+        <a class="nav-link" href="#reto"><span class="nav-number">04</span> Reto final</a>
+        <a class="nav-link" href="#laboratorio"><span class="nav-icon">⌘</span> Laboratorio Codespaces</a>
+      </nav>
+      <div class="progress-card">
+        <div class="progress-title"><span>Tu progreso</span><span id="progress-percent">0%</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Progreso del curso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <span id="progress-fill"></span>
+        </div>
+        <p id="progress-caption">Marca las actividades a medida que avanzas.</p>
+        <button class="text-button" id="reset-progress" type="button">Reiniciar progreso</button>
+      </div>
+      <p class="sidebar-note">El progreso se guarda solo en este navegador. No se envían datos.</p>
+    </aside>
+
+    <main id="contenido">
+      <section class="hero section-anchor" id="inicio">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> DEVOPS + CIBERSEGURIDAD</div>
+          <h1>De tu código<br>a <span>producción segura.</span></h1>
+          <p class="hero-lead">Aprende a preparar y desplegar una aplicación Flask con Docker, encontrando y corrigiendo errores de seguridad en un laboratorio aislado.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#preparar">Empezar la unidad <span aria-hidden="true">→</span></a>
+            <a class="button button-quiet" href="#mapa">Ver el recorrido</a>
+          </div>
+          <div class="hero-meta">
+            <span><span aria-hidden="true">◷</span> 2–4 horas</span>
+            <span><span aria-hidden="true">⌘</span> GitHub Codespaces</span>
+            <span><span aria-hidden="true">◎</span> Nivel inicial</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Ilustración de un despliegue protegido">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="terminal-card">
+            <div class="terminal-head"><div class="terminal-dots"><i></i><i></i><i></i></div><span>deploy.yml</span><span class="terminal-lock">▣</span></div>
+            <div class="terminal-body">
+              <div><span class="line-no">1</span><span class="code-purple">name:</span> secure-deploy</div>
+              <div><span class="line-no">2</span><span class="code-purple">on:</span> push</div>
+              <div class="code-gap"></div>
+              <div><span class="line-no">3</span><span class="code-purple">steps:</span></div>
+              <div><span class="line-no">4</span><span class="code-green">✓</span> test application</div>
+              <div><span class="line-no">5</span><span class="code-green">✓</span> scan image</div>
+              <div><span class="line-no">6</span><span class="code-green">✓</span> deploy safely</div>
+            </div>
+            <div class="terminal-status"><span class="status-pulse"></span> Entorno protegido <span class="status-check">✓</span></div>
+          </div>
+          <div class="floating-badge badge-shield"><span aria-hidden="true">⬡</span> Seguro por diseño</div>
+          <div class="floating-badge badge-check"><span aria-hidden="true">✓</span> Validado</div>
+        </div>
+      </section>
+
+      <section class="content-section intro-section">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">OBJETIVO DE APRENDIZAJE</div>
+            <h2>Al terminar, podrás desplegar con criterio.</h2>
+          </div>
+          <p>No es solo que la aplicación funcione: sabrás explicar qué riesgos has reducido y cómo comprobarlo.</p>
+        </div>
+        <div class="outcome-grid">
+          <article class="outcome-card"><span class="outcome-icon icon-blue">01</span><h3>Preparar</h3><p>Separar configuración y código, y evitar exponer información sensible.</p></article>
+          <article class="outcome-card"><span class="outcome-icon icon-violet">02</span><h3>Construir</h3><p>Crear una imagen Docker más pequeña, reproducible y con permisos mínimos.</p></article>
+          <article class="outcome-card"><span class="outcome-icon icon-green">03</span><h3>Comprobar</h3><p>Probar el servicio, revisar señales de riesgo y definir cómo recuperarse.</p></article>
+        </div>
+      </section>
+
+      <section class="content-section roadmap-section section-anchor" id="mapa">
+        <div class="eyebrow">TU RUTA · 4 ETAPAS</div>
+        <div class="section-heading compact-heading"><h2>Un recorrido, paso a paso.</h2><span class="time-total">≈ 2–4 h en total</span></div>
+        <div class="roadmap">
+          <a class="roadmap-item" href="#preparar"><span class="roadmap-num">01</span><span><strong>Prepara la aplicación</strong><small>Configuración, secretos y entorno</small></span><span class="roadmap-time">25 min</span></a>
+          <a class="roadmap-item" href="#contenedor"><span class="roadmap-num">02</span><span><strong>Endurece el contenedor</strong><small>Imagen, dependencias y usuario</small></span><span class="roadmap-time">45 min</span></a>
+          <a class="roadmap-item" href="#desplegar"><span class="roadmap-num">03</span><span><strong>Despliega y verifica</strong><small>Pruebas, exposición y reversión</small></span><span class="roadmap-time">35 min</span></a>
+          <a class="roadmap-item" href="#reto"><span class="roadmap-num">04</span><span><strong>Resuelve el reto final</strong><small>Aplica lo aprendido y autoevalúate</small></span><span class="roadmap-time">45–90 min</span></a>
+        </div>
+      </section>
+
+      <section class="lesson-section section-anchor" id="preparar">
+        <div class="lesson-header">
+          <div class="lesson-index">01 <span>/ 04</span></div>
+          <div class="lesson-title-wrap"><div class="eyebrow">LECCIÓN 1 · 25 MIN</div><h2>Prepara la aplicación</h2><p>Antes de empaquetar, asegúrate de que la aplicación no depende de configuraciones de desarrollo ni filtra información.</p></div>
+          <span class="lesson-tag tag-blue">FUNDAMENTOS</span>
+        </div>
+        <div class="lesson-columns">
+          <div class="lesson-main">
+            <article class="info-panel">
+              <h3><span class="panel-icon">i</span> El escenario</h3>
+              <p>El equipo está listo para publicar una aplicación Flask. En el entorno local todo funciona, pero el modo de depuración sigue activado y algunos valores de configuración están escritos directamente en el código. Esos atajos pueden revelar detalles internos o acabar exponiendo credenciales.</p>
+            </article>
+            <h3 class="subheading">Tres decisiones antes del despliegue</h3>
+            <div class="principle-list">
+              <div class="principle"><span class="principle-number">1</span><div><h4>Configuración fuera del código</h4><p>Lee los valores del entorno. Usa datos ficticios en el laboratorio; los secretos reales deben gestionarse fuera del repositorio y rotarse si se exponen.</p></div></div>
+              <div class="principle"><span class="principle-number">2</span><div><h4>Desarrollo y producción son distintos</h4><p>Desactiva el modo debug en producción. El servidor de desarrollo de Flask es una herramienta local, no un servidor de producción.</p></div></div>
+              <div class="principle"><span class="principle-number">3</span><div><h4>Registros sin datos sensibles</h4><p>Registra eventos útiles para diagnosticar, pero no contraseñas, tokens, cookies ni datos personales innecesarios.</p></div></div>
+            </div>
+            <div class="callout callout-warning"><span class="callout-icon">!</span><p><strong>Regla práctica:</strong> si una credencial llegó al repositorio, borrarla del último commit no garantiza que haya desaparecido del historial. Revócala o rótala.</p></div>
+            <div class="check-row"><label><input class="progress-check" type="checkbox" data-progress="config"><span class="custom-check"></span><span>He revisado configuración, modo debug y datos sensibles.</span></label></div>
+          </div>
+          <aside class="lesson-aside">
+            <div class="aside-card">
+              <h3>Comprueba lo aprendido</h3>
+              <p class="question-text">Encuentras una clave de prueba en el historial público del repositorio. ¿Qué haces primero?</p>
+              <form class="quiz" data-quiz="secrets">
+                <label class="quiz-option"><input type="radio" name="secrets" value="a"><span class="radio-dot"></span><span>La elimino del archivo y sigo.</span></label>
+                <label class="quiz-option"><input type="radio" name="secrets" value="b"><span class="radio-dot"></span><span>La revoco o roto y compruebo el alcance de la exposición.</span></label>
+                <label class="quiz-option"><input type="radio" name="secrets" value="c"><span class="radio-dot"></span><span>Renombro la variable para que no se encuentre.</span></label>
+                <button class="button button-primary button-full" type="submit">Comprobar respuesta</button>
+                <div class="quiz-feedback" aria-live="polite"></div>
+              </form>
+            </div>
+            <div class="tip-card"><span class="tip-label">RECUERDA</span><p>Una variable de entorno evita guardar el secreto en el código, pero no es una caja fuerte por sí sola. Limita quién puede leerla.</p></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="lesson-section section-anchor" id="contenedor">
+        <div class="lesson-header">
+          <div class="lesson-index">02 <span>/ 04</span></div>
+          <div class="lesson-title-wrap"><div class="eyebrow">LECCIÓN 2 · 45 MIN</div><h2>Endurece el contenedor</h2><p>Un contenedor no es seguro por el mero hecho de estar aislado. Reduce su superficie de ataque y limita su impacto.</p></div>
+          <span class="lesson-tag tag-violet">DOCKER</span>
+        </div>
+        <div class="lesson-columns">
+          <div class="lesson-main">
+            <div class="comparison-card">
+              <div class="comparison-top"><span class="comparison-label">REVISIÓN DE DOCKERFILE</span><span class="risk-pill"><span></span> 4 señales de riesgo</span></div>
+              <div class="code-review">
+                <div class="code-line"><span class="code-line-num">1</span><code><span class="code-red">FROM</span> python:<span class="code-yellow">latest</span></code><span class="risk-mark">!</span></div>
+                <div class="code-line"><span class="code-line-num">2</span><code><span class="code-red">WORKDIR</span> /app</code></div>
+                <div class="code-line"><span class="code-line-num">3</span><code><span class="code-red">COPY</span> requirements.txt .</code></div>
+                <div class="code-line"><span class="code-line-num">4</span><code><span class="code-red">RUN</span> pip install -r requirements.txt</code></div>
+                <div class="code-line"><span class="code-line-num">5</span><code><span class="code-red">COPY</span> . .</code><span class="risk-mark">!</span></div>
+                <div class="code-line"><span class="code-line-num">6</span><code><span class="code-red">EXPOSE</span> 5000</code></div>
+                <div class="code-line"><span class="code-line-num">7</span><code><span class="code-red">CMD</span> ["flask", "run", "--host=0.0.0.0", "--debug"]</code><span class="risk-mark">!</span></div>
+              </div>
+              <div class="comparison-foot"><span>¿Qué cambiarías antes de publicar?</span><a href="#reto">Pruébalo en el reto <span aria-hidden="true">→</span></a></div>
+            </div>
+            <div class="concept-grid">
+              <article class="concept-card"><span class="concept-icon">▤</span><h3>Fija la base</h3><p>Evita etiquetas mutables como <code>latest</code>. Elige una versión mantenida y define cómo actualizarla y reconstruirla con regularidad.</p></article>
+              <article class="concept-card"><span class="concept-icon">♙</span><h3>Reduce privilegios</h3><p>Ejecuta el proceso con un usuario sin privilegios. Si la aplicación se compromete, esto limita lo que puede hacer dentro del contenedor.</p></article>
+              <article class="concept-card"><span class="concept-icon">◫</span><h3>Incluye lo necesario</h3><p>Usa <code>.dockerignore</code>, instala dependencias declaradas y minimiza archivos y herramientas incluidos en la imagen.</p></article>
+              <article class="concept-card"><span class="concept-icon">⌁</span><h3>Sirve correctamente</h3><p>Usa un servidor WSGI adecuado para producción. Añade una comprobación de salud y evita activar debug.</p></article>
+            </div>
+            <div class="callout callout-info"><span class="callout-icon">↗</span><p><strong>Capas y caché:</strong> copia e instala primero el archivo de dependencias y copia después el código. Así Docker puede reutilizar la capa de instalación cuando el código cambia.</p></div>
+            <div class="check-row"><label><input class="progress-check" type="checkbox" data-progress="docker"><span class="custom-check"></span><span>He identificado cómo fijar la base, limitar privilegios y reducir la imagen.</span></label></div>
+          </div>
+          <aside class="lesson-aside">
+            <div class="aside-card">
+              <h3>Comprueba lo aprendido</h3>
+              <p class="question-text">¿Qué aporta ejecutar la aplicación como usuario no root?</p>
+              <form class="quiz" data-quiz="user">
+                <label class="quiz-option"><input type="radio" name="user" value="a"><span class="radio-dot"></span><span>Impide que cualquier vulnerabilidad afecte al contenedor.</span></label>
+                <label class="quiz-option"><input type="radio" name="user" value="b"><span class="radio-dot"></span><span>Reduce los permisos disponibles si el proceso se ve comprometido.</span></label>
+                <label class="quiz-option"><input type="radio" name="user" value="c"><span class="radio-dot"></span><span>Hace innecesario actualizar la imagen base.</span></label>
+                <button class="button button-primary button-full" type="submit">Comprobar respuesta</button>
+                <div class="quiz-feedback" aria-live="polite"></div>
+              </form>
+            </div>
+            <div class="tip-card"><span class="tip-label">NO CONFUNDAS</span><p><code>EXPOSE</code> documenta un puerto; no publica ni protege por sí mismo el servicio.</p></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="lesson-section section-anchor" id="desplegar">
+        <div class="lesson-header">
+          <div class="lesson-index">03 <span>/ 04</span></div>
+          <div class="lesson-title-wrap"><div class="eyebrow">LECCIÓN 3 · 35 MIN</div><h2>Despliega y verifica</h2><p>Un despliegue seguro también requiere controlar quién puede acceder, comprobar que funciona y saber cómo volver atrás.</p></div>
+          <span class="lesson-tag tag-green">OPERACIÓN</span>
+        </div>
+        <div class="lesson-main full-width">
+          <div class="deploy-grid">
+            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">01</span><span class="deploy-icon">⌕</span></div><h3>Valida antes</h3><p>Ejecuta pruebas y análisis de dependencias. Revisa cambios, permisos del pipeline y que el artefacto construido sea el que vas a desplegar.</p><ul><li>Pruebas pasan</li><li>Dependencias revisadas</li><li>Permisos mínimos</li></ul></article>
+            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">02</span><span class="deploy-icon">⇧</span></div><h3>Publica con control</h3><p>Expón únicamente los puertos necesarios. Usa TLS en servicios publicados y limita el acceso administrativo.</p><ul><li>Puertos justificados</li><li>Acceso restringido</li><li>Configuración de producción</li></ul></article>
+            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">03</span><span class="deploy-icon">◉</span></div><h3>Verifica y observa</h3><p>Confirma la salud del servicio y monitoriza disponibilidad y errores. Evita que los registros incluyan secretos.</p><ul><li>Health check responde</li><li>Alertas útiles</li><li>Logs sin datos sensibles</li></ul></article>
+            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">04</span><span class="deploy-icon">↶</span></div><h3>Prepara la vuelta atrás</h3><p>Conserva una versión anterior identificable. Practica la reversión y verifica que las copias de seguridad se pueden restaurar.</p><ul><li>Versión identificable</li><li>Reversión ensayada</li><li>Restauración comprobada</li></ul></article>
+          </div>
+          <div class="quiz-wide">
+            <div><div class="eyebrow">PREGUNTA RÁPIDA</div><h3>¿Qué afirmación sobre publicar un puerto es correcta?</h3></div>
+            <form class="quiz quiz-inline" data-quiz="port">
+              <label class="quiz-option"><input type="radio" name="port" value="a"><span class="radio-dot"></span><span>Todo puerto expuesto en Docker queda accesible desde Internet.</span></label>
+              <label class="quiz-option"><input type="radio" name="port" value="b"><span class="radio-dot"></span><span>La accesibilidad depende también de cómo se mapea y de la red o plataforma.</span></label>
+              <label class="quiz-option"><input type="radio" name="port" value="c"><span class="radio-dot"></span><span>EXPOSE cifra el tráfico del puerto.</span></label>
+              <button class="button button-primary" type="submit">Comprobar</button>
+              <div class="quiz-feedback" aria-live="polite"></div>
+            </form>
+          </div>
+          <div class="check-row"><label><input class="progress-check" type="checkbox" data-progress="deploy"><span class="custom-check"></span><span>He revisado validación, exposición, observabilidad y reversión.</span></label></div>
+        </div>
+      </section>
+
+      <section class="challenge-section section-anchor" id="reto">
+        <div class="challenge-banner">
+          <div class="challenge-copy">
+            <div class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> RETO INTEGRADOR · 45–90 MIN</div>
+            <h2>Tu misión: corrige el despliegue.</h2>
+            <p>Abre el laboratorio en Codespaces. Revisa el Dockerfile inicial, identifica riesgos y adapta la aplicación para ejecutarla con una configuración más segura.</p>
+            <a class="button button-white" href="#laboratorio">Preparar el laboratorio <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="challenge-graphic" aria-hidden="true"><div class="challenge-ring"></div><div class="challenge-shield">✓</div><div class="challenge-chip chip-one">IMAGE</div><div class="challenge-chip chip-two">HEALTH</div><div class="challenge-chip chip-three">NON-ROOT</div></div>
+        </div>
+        <div class="challenge-content">
+          <div class="challenge-instructions">
+            <div class="eyebrow">PASOS DEL RETO</div>
+            <h3>Investiga. Cambia. Verifica.</h3>
+            <ol class="step-list">
+              <li><span>1</span><p>Abre el repositorio en un Codespace y lee <code>laboratorio/README.md</code>.</p></li>
+              <li><span>2</span><p>Construye y ejecuta el contenedor inicial solo en el entorno privado del laboratorio.</p></li>
+              <li><span>3</span><p>Inspecciona la imagen y el proceso. Anota los riesgos antes de modificar archivos.</p></li>
+              <li><span>4</span><p>Corrige el Dockerfile y la configuración. Usa las pistas y criterios de éxito, no publiques el servicio.</p></li>
+              <li><span>5</span><p>Reconstruye, ejecuta las verificaciones y documenta qué riesgo reduce cada cambio.</p></li>
+            </ol>
+          </div>
+          <div class="success-card">
+            <div class="success-heading"><span class="success-check">✓</span><div><h3>Criterios de éxito</h3><p>Marca cada punto al comprobarlo.</p></div></div>
+            <label class="success-item"><input class="progress-check" type="checkbox" data-progress="base"><span class="custom-check"></span><span>La imagen usa una base concreta y mantenida, no una etiqueta mutable.</span></label>
+            <label class="success-item"><input class="progress-check" type="checkbox" data-progress="nonroot"><span class="custom-check"></span><span>El proceso se ejecuta con un usuario sin privilegios.</span></label>
+            <label class="success-item"><input class="progress-check" type="checkbox" data-progress="debug"><span class="custom-check"></span><span>Debug está desactivado y se usa un servidor WSGI apropiado.</span></label>
+            <label class="success-item"><input class="progress-check" type="checkbox" data-progress="health"><span class="custom-check"></span><span>La aplicación tiene una comprobación de salud funcional.</span></label>
+            <label class="success-item"><input class="progress-check" type="checkbox" data-progress="secrets2"><span class="custom-check"></span><span>No hay secretos ni archivos locales innecesarios en la imagen.</span></label>
+            <label class="success-item"><input class="progress-check" type="checkbox" data-progress="verify"><span class="custom-check"></span><span>He reconstruido, probado y explicado mis cambios.</span></label>
+          </div>
+        </div>
+        <div class="reflection-card">
+          <span class="reflection-icon">✳</span>
+          <div><h3>Reflexiona antes de darlo por terminado</h3><p>¿Qué ocurriría si alguien explotara una vulnerabilidad en tu aplicación? ¿Qué cambio limita mejor el impacto? ¿Qué comprobarías primero si el despliegue deja de responder?</p></div>
+        </div>
+      </section>
+
+      <section class="lab-section section-anchor" id="laboratorio">
+        <div class="section-heading">
+          <div><div class="eyebrow">ENTORNO PRÁCTICO</div><h2>Laboratorio en Codespaces.</h2></div>
+          <p>El proyecto de ejemplo vive en este mismo repositorio. Trabaja en un Codespace privado y no publiques el contenedor en Internet.</p>
+        </div>
+        <div class="lab-grid">
+          <article class="lab-card lab-start">
+            <div class="lab-icon">⌘</div><div class="eyebrow">EMPIEZA AQUÍ</div><h3>Abre el laboratorio</h3>
+            <p>Cuando el proyecto esté en tu cuenta o en la organización del centro, pulsa el botón para crear un Codespace. Necesitarás una cuenta de GitHub con acceso a Codespaces.</p>
+            <a class="button button-primary" href="https://github.com/codespaces" target="_blank" rel="noopener noreferrer">Ir a GitHub Codespaces <span aria-hidden="true">↗</span></a>
+            <p class="small-note">Busca el repositorio del curso y elige <strong>Code → Codespaces → Create codespace</strong>. Si ya tienes el repositorio clonado, ábrelo desde VS Code.</p>
+          </article>
+          <article class="lab-card">
+            <div class="lab-icon lab-icon-green">⌁</div><div class="eyebrow">DENTRO DEL CODESPACE</div><h3>Arranca la aplicación</h3>
+            <p>En la terminal integrada, desde la raíz del repositorio:</p>
+            <div class="command-block"><code>cd laboratorio<br>docker build -t flask-lab .<br>docker run --rm -p 127.0.0.1:5000:5000 flask-lab</code><button class="copy-button" type="button" data-copy="cd laboratorio&#10;docker build -t flask-lab .&#10;docker run --rm -p 127.0.0.1:5000:5000 flask-lab" aria-label="Copiar comandos">Copiar</button></div>
+            <p class="small-note">La configuración inicial es deliberadamente mejorable. Ejecútala solo en el Codespace privado. Detén el proceso con <kbd>Ctrl</kbd> + <kbd>C</kbd>.</p>
+          </article>
+          <article class="lab-card">
+            <div class="lab-icon lab-icon-amber">!</div><div class="eyebrow">USO RESPONSABLE</div><h3>Solo en el entorno del curso</h3>
+            <ul class="safety-list"><li>El proyecto es educativo y no contiene credenciales reales.</li><li>Mantén el puerto reenviado con visibilidad privada.</li><li>No despliegues la configuración inicial ni la dejes expuesta.</li><li>Al terminar, detén y elimina el Codespace si ya no lo necesitas.</li></ul>
+            <p class="small-note">No pruebes cambios de seguridad en sistemas ajenos ni en servicios públicos.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="completion-section">
+        <div class="completion-mark">✦</div>
+        <div><div class="eyebrow">UNIDAD COMPLETADA</div><h2>Seguro no es una casilla. Es una práctica.</h2><p>Recorre tu lista de criterios, vuelve a las respuestas si lo necesitas y anota qué revisarías en tu próximo despliegue real.</p></div>
+        <a class="button button-outline" href="#inicio">Volver al inicio ↑</a>
+      </section>
+
+      <footer class="site-footer"><a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true">A</span><span>Aula <strong>DevOps</strong></span></a><p>Unidad didáctica abierta · Despliegue seguro de una aplicación Flask</p><a href="#laboratorio">Ir al laboratorio ↑</a></footer>
+    </main>
+  </div>
+</body>
+</html>
