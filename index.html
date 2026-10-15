@@ -25,26 +25,26 @@
   <div class="layout">
     <aside class="sidebar" aria-label="Navegación del curso">
       <div class="sidebar-heading">TU RECORRIDO</div>
-      <nav class="course-nav">
-        <a class="nav-link active" href="#inicio"><span class="nav-icon">⌂</span> Inicio</a>
+      <nav class="course-nav" aria-label="Recorrido del curso">
+        <a class="nav-link active" href="#inicio" aria-current="location"><span class="nav-icon" aria-hidden="true">⌂</span> Inicio</a>
         <a class="nav-link" href="#preparar"><span class="nav-number">01</span> Preparar la app</a>
         <a class="nav-link" href="#contenedor"><span class="nav-number">02</span> Endurecer Docker</a>
         <a class="nav-link" href="#desplegar"><span class="nav-number">03</span> Desplegar y verificar</a>
         <a class="nav-link" href="#reto"><span class="nav-number">04</span> Reto final</a>
-        <a class="nav-link" href="#laboratorio"><span class="nav-icon">⌘</span> Laboratorio Codespaces</a>
+        <a class="nav-link" href="#laboratorio"><span class="nav-icon" aria-hidden="true">⌘</span> Laboratorio Codespaces</a>
       </nav>
       <div class="progress-card">
         <div class="progress-title"><span>Tu progreso</span><span id="progress-percent">0%</span></div>
         <div class="progress-track" role="progressbar" aria-label="Progreso del curso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
           <span id="progress-fill"></span>
         </div>
-        <p id="progress-caption">Marca las actividades a medida que avanzas.</p>
+        <p id="progress-caption" role="status" aria-live="polite" aria-atomic="true">Marca las actividades a medida que avanzas.</p>
         <button class="text-button" id="reset-progress" type="button">Reiniciar progreso</button>
       </div>
       <p class="sidebar-note">El progreso se guarda solo en este navegador. No se envían datos.</p>
     </aside>
 
-    <main id="contenido">
+    <main id="contenido" tabindex="-1">
       <section class="hero section-anchor" id="inicio">
         <div class="hero-copy">
           <div class="eyebrow"><span class="eyebrow-dot"></span> DEVOPS + CIBERSEGURIDAD</div>
@@ -60,7 +60,7 @@
             <span><span aria-hidden="true">◎</span> Nivel inicial</span>
           </div>
         </div>
-        <div class="hero-art" aria-label="Ilustración de un despliegue protegido">
+        <div class="hero-art" role="img" aria-label="Ilustración de un archivo de despliegue con pruebas, análisis de imagen y publicación segura">
           <div class="orbit orbit-one"></div>
           <div class="orbit orbit-two"></div>
           <div class="terminal-card">
@@ -90,9 +90,9 @@
           <p>No es solo que la aplicación funcione: sabrás explicar qué riesgos has reducido y cómo comprobarlo.</p>
         </div>
         <div class="outcome-grid">
-          <article class="outcome-card"><span class="outcome-icon icon-blue">01</span><h3>Preparar</h3><p>Separar configuración y código, y evitar exponer información sensible.</p></article>
-          <article class="outcome-card"><span class="outcome-icon icon-violet">02</span><h3>Construir</h3><p>Crear una imagen Docker más pequeña, reproducible y con permisos mínimos.</p></article>
-          <article class="outcome-card"><span class="outcome-icon icon-green">03</span><h3>Comprobar</h3><p>Probar el servicio, revisar señales de riesgo y definir cómo recuperarse.</p></article>
+          <article class="outcome-card"><span class="outcome-icon icon-blue" aria-hidden="true">01</span><h3>Preparar</h3><p>Separar configuración y código, y evitar exponer información sensible.</p></article>
+          <article class="outcome-card"><span class="outcome-icon icon-violet" aria-hidden="true">02</span><h3>Construir</h3><p>Crear una imagen Docker más pequeña, reproducible y con permisos mínimos.</p></article>
+          <article class="outcome-card"><span class="outcome-icon icon-green" aria-hidden="true">03</span><h3>Comprobar</h3><p>Probar el servicio, revisar señales de riesgo y definir cómo recuperarse.</p></article>
         </div>
       </section>
 
@@ -100,10 +100,10 @@
         <div class="eyebrow">TU RUTA · 4 ETAPAS</div>
         <div class="section-heading compact-heading"><h2>Un recorrido, paso a paso.</h2><span class="time-total">≈ 2–4 h en total</span></div>
         <div class="roadmap">
-          <a class="roadmap-item" href="#preparar"><span class="roadmap-num">01</span><span><strong>Prepara la aplicación</strong><small>Configuración, secretos y entorno</small></span><span class="roadmap-time">25 min</span></a>
-          <a class="roadmap-item" href="#contenedor"><span class="roadmap-num">02</span><span><strong>Endurece el contenedor</strong><small>Imagen, dependencias y usuario</small></span><span class="roadmap-time">45 min</span></a>
-          <a class="roadmap-item" href="#desplegar"><span class="roadmap-num">03</span><span><strong>Despliega y verifica</strong><small>Pruebas, exposición y reversión</small></span><span class="roadmap-time">35 min</span></a>
-          <a class="roadmap-item" href="#reto"><span class="roadmap-num">04</span><span><strong>Resuelve el reto final</strong><small>Aplica lo aprendido y autoevalúate</small></span><span class="roadmap-time">45–90 min</span></a>
+          <a class="roadmap-item" href="#preparar"><span class="roadmap-num" aria-hidden="true">01</span><span><strong>Prepara la aplicación</strong><small>Configuración, secretos y entorno</small></span><span class="roadmap-time">25 min</span></a>
+          <a class="roadmap-item" href="#contenedor"><span class="roadmap-num" aria-hidden="true">02</span><span><strong>Endurece el contenedor</strong><small>Imagen, dependencias y usuario</small></span><span class="roadmap-time">45 min</span></a>
+          <a class="roadmap-item" href="#desplegar"><span class="roadmap-num" aria-hidden="true">03</span><span><strong>Despliega y verifica</strong><small>Pruebas, exposición y reversión</small></span><span class="roadmap-time">35 min</span></a>
+          <a class="roadmap-item" href="#reto"><span class="roadmap-num" aria-hidden="true">04</span><span><strong>Resuelve el reto final</strong><small>Aplica lo aprendido y autoevalúate</small></span><span class="roadmap-time">45–90 min</span></a>
         </div>
       </section>
 
@@ -116,7 +116,7 @@
         <div class="lesson-columns">
           <div class="lesson-main">
             <article class="info-panel">
-              <h3><span class="panel-icon">i</span> El escenario</h3>
+              <h3><span class="panel-icon" aria-hidden="true">i</span> El escenario</h3>
               <p>El equipo está listo para publicar una aplicación Flask. En el entorno local todo funciona, pero el modo de depuración sigue activado y algunos valores de configuración están escritos directamente en el código. Esos atajos pueden revelar detalles internos o acabar exponiendo credenciales.</p>
             </article>
             <h3 class="subheading">Tres decisiones antes del despliegue</h3>
@@ -125,19 +125,22 @@
               <div class="principle"><span class="principle-number">2</span><div><h4>Desarrollo y producción son distintos</h4><p>Desactiva el modo debug en producción. El servidor de desarrollo de Flask es una herramienta local, no un servidor de producción.</p></div></div>
               <div class="principle"><span class="principle-number">3</span><div><h4>Registros sin datos sensibles</h4><p>Registra eventos útiles para diagnosticar, pero no contraseñas, tokens, cookies ni datos personales innecesarios.</p></div></div>
             </div>
-            <div class="callout callout-warning"><span class="callout-icon">!</span><p><strong>Regla práctica:</strong> si una credencial llegó al repositorio, borrarla del último commit no garantiza que haya desaparecido del historial. Revócala o rótala.</p></div>
+            <div class="callout callout-warning"><span class="callout-icon" aria-hidden="true">!</span><p><strong>Regla práctica:</strong> si una credencial llegó al repositorio, borrarla del último commit no garantiza que haya desaparecido del historial. Revócala o rótala.</p></div>
             <div class="check-row"><label><input class="progress-check" type="checkbox" data-progress="config"><span class="custom-check"></span><span>He revisado configuración, modo debug y datos sensibles.</span></label></div>
           </div>
           <aside class="lesson-aside">
             <div class="aside-card">
               <h3>Comprueba lo aprendido</h3>
-              <p class="question-text">Encuentras una clave de prueba en el historial público del repositorio. ¿Qué haces primero?</p>
               <form class="quiz" data-quiz="secrets">
-                <label class="quiz-option"><input type="radio" name="secrets" value="a"><span class="radio-dot"></span><span>La elimino del archivo y sigo.</span></label>
-                <label class="quiz-option"><input type="radio" name="secrets" value="b"><span class="radio-dot"></span><span>La revoco o roto y compruebo el alcance de la exposición.</span></label>
-                <label class="quiz-option"><input type="radio" name="secrets" value="c"><span class="radio-dot"></span><span>Renombro la variable para que no se encuentre.</span></label>
+                <fieldset class="quiz-options" aria-labelledby="quiz-secrets-question">
+                  <legend class="visually-hidden">Selecciona una respuesta</legend>
+                  <p class="question-text" id="quiz-secrets-question">Encuentras una clave de prueba en el historial público del repositorio. ¿Qué haces primero?</p>
+                  <label class="quiz-option"><input type="radio" name="secrets" value="a"><span class="radio-dot" aria-hidden="true"></span><span>La elimino del archivo y sigo.</span></label>
+                  <label class="quiz-option"><input type="radio" name="secrets" value="b"><span class="radio-dot" aria-hidden="true"></span><span>La revoco o roto y compruebo el alcance de la exposición.</span></label>
+                  <label class="quiz-option"><input type="radio" name="secrets" value="c"><span class="radio-dot" aria-hidden="true"></span><span>Renombro la variable para que no se encuentre.</span></label>
+                </fieldset>
                 <button class="button button-primary button-full" type="submit">Comprobar respuesta</button>
-                <div class="quiz-feedback" aria-live="polite"></div>
+                <div class="quiz-feedback" role="status" aria-live="polite" aria-atomic="true"></div>
               </form>
             </div>
             <div class="tip-card"><span class="tip-label">RECUERDA</span><p>Una variable de entorno evita guardar el secreto en el código, pero no es una caja fuerte por sí sola. Limita quién puede leerla.</p></div>
@@ -167,24 +170,27 @@
               <div class="comparison-foot"><span>¿Qué cambiarías antes de publicar?</span><a href="#reto">Pruébalo en el reto <span aria-hidden="true">→</span></a></div>
             </div>
             <div class="concept-grid">
-              <article class="concept-card"><span class="concept-icon">▤</span><h3>Fija la base</h3><p>Evita etiquetas mutables como <code>latest</code>. Elige una versión mantenida y define cómo actualizarla y reconstruirla con regularidad.</p></article>
-              <article class="concept-card"><span class="concept-icon">♙</span><h3>Reduce privilegios</h3><p>Ejecuta el proceso con un usuario sin privilegios. Si la aplicación se compromete, esto limita lo que puede hacer dentro del contenedor.</p></article>
-              <article class="concept-card"><span class="concept-icon">◫</span><h3>Incluye lo necesario</h3><p>Usa <code>.dockerignore</code>, instala dependencias declaradas y minimiza archivos y herramientas incluidos en la imagen.</p></article>
-              <article class="concept-card"><span class="concept-icon">⌁</span><h3>Sirve correctamente</h3><p>Usa un servidor WSGI adecuado para producción. Añade una comprobación de salud y evita activar debug.</p></article>
+              <article class="concept-card"><span class="concept-icon" aria-hidden="true">▤</span><h3>Fija la base</h3><p>Evita etiquetas mutables como <code>latest</code>. Elige una versión mantenida y define cómo actualizarla y reconstruirla con regularidad.</p></article>
+              <article class="concept-card"><span class="concept-icon" aria-hidden="true">♙</span><h3>Reduce privilegios</h3><p>Ejecuta el proceso con un usuario sin privilegios. Si la aplicación se compromete, esto limita lo que puede hacer dentro del contenedor.</p></article>
+              <article class="concept-card"><span class="concept-icon" aria-hidden="true">◫</span><h3>Incluye lo necesario</h3><p>Usa <code>.dockerignore</code>, instala dependencias declaradas y minimiza archivos y herramientas incluidos en la imagen.</p></article>
+              <article class="concept-card"><span class="concept-icon" aria-hidden="true">⌁</span><h3>Sirve correctamente</h3><p>Usa un servidor WSGI adecuado para producción. Añade una comprobación de salud y evita activar debug.</p></article>
             </div>
-            <div class="callout callout-info"><span class="callout-icon">↗</span><p><strong>Capas y caché:</strong> copia e instala primero el archivo de dependencias y copia después el código. Así Docker puede reutilizar la capa de instalación cuando el código cambia.</p></div>
+            <div class="callout callout-info"><span class="callout-icon" aria-hidden="true">↗</span><p><strong>Capas y caché:</strong> copia e instala primero el archivo de dependencias y copia después el código. Así Docker puede reutilizar la capa de instalación cuando el código cambia.</p></div>
             <div class="check-row"><label><input class="progress-check" type="checkbox" data-progress="docker"><span class="custom-check"></span><span>He identificado cómo fijar la base, limitar privilegios y reducir la imagen.</span></label></div>
           </div>
           <aside class="lesson-aside">
             <div class="aside-card">
               <h3>Comprueba lo aprendido</h3>
-              <p class="question-text">¿Qué aporta ejecutar la aplicación como usuario no root?</p>
               <form class="quiz" data-quiz="user">
-                <label class="quiz-option"><input type="radio" name="user" value="a"><span class="radio-dot"></span><span>Impide que cualquier vulnerabilidad afecte al contenedor.</span></label>
-                <label class="quiz-option"><input type="radio" name="user" value="b"><span class="radio-dot"></span><span>Reduce los permisos disponibles si el proceso se ve comprometido.</span></label>
-                <label class="quiz-option"><input type="radio" name="user" value="c"><span class="radio-dot"></span><span>Hace innecesario actualizar la imagen base.</span></label>
+                <fieldset class="quiz-options" aria-labelledby="quiz-user-question">
+                  <legend class="visually-hidden">Selecciona una respuesta</legend>
+                  <p class="question-text" id="quiz-user-question">¿Qué aporta ejecutar la aplicación como usuario no root?</p>
+                  <label class="quiz-option"><input type="radio" name="user" value="a"><span class="radio-dot" aria-hidden="true"></span><span>Impide que cualquier vulnerabilidad afecte al contenedor.</span></label>
+                  <label class="quiz-option"><input type="radio" name="user" value="b"><span class="radio-dot" aria-hidden="true"></span><span>Reduce los permisos disponibles si el proceso se ve comprometido.</span></label>
+                  <label class="quiz-option"><input type="radio" name="user" value="c"><span class="radio-dot" aria-hidden="true"></span><span>Hace innecesario actualizar la imagen base.</span></label>
+                </fieldset>
                 <button class="button button-primary button-full" type="submit">Comprobar respuesta</button>
-                <div class="quiz-feedback" aria-live="polite"></div>
+                <div class="quiz-feedback" role="status" aria-live="polite" aria-atomic="true"></div>
               </form>
             </div>
             <div class="tip-card"><span class="tip-label">NO CONFUNDAS</span><p><code>EXPOSE</code> documenta un puerto; no publica ni protege por sí mismo el servicio.</p></div>
@@ -200,19 +206,22 @@
         </div>
         <div class="lesson-main full-width">
           <div class="deploy-grid">
-            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">01</span><span class="deploy-icon">⌕</span></div><h3>Valida antes</h3><p>Ejecuta pruebas y análisis de dependencias. Revisa cambios, permisos del pipeline y que el artefacto construido sea el que vas a desplegar.</p><ul><li>Pruebas pasan</li><li>Dependencias revisadas</li><li>Permisos mínimos</li></ul></article>
-            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">02</span><span class="deploy-icon">⇧</span></div><h3>Publica con control</h3><p>Expón únicamente los puertos necesarios. Usa TLS en servicios publicados y limita el acceso administrativo.</p><ul><li>Puertos justificados</li><li>Acceso restringido</li><li>Configuración de producción</li></ul></article>
-            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">03</span><span class="deploy-icon">◉</span></div><h3>Verifica y observa</h3><p>Confirma la salud del servicio y monitoriza disponibilidad y errores. Evita que los registros incluyan secretos.</p><ul><li>Health check responde</li><li>Alertas útiles</li><li>Logs sin datos sensibles</li></ul></article>
-            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">04</span><span class="deploy-icon">↶</span></div><h3>Prepara la vuelta atrás</h3><p>Conserva una versión anterior identificable. Practica la reversión y verifica que las copias de seguridad se pueden restaurar.</p><ul><li>Versión identificable</li><li>Reversión ensayada</li><li>Restauración comprobada</li></ul></article>
+            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">01</span><span class="deploy-icon" aria-hidden="true">⌕</span></div><h3>Valida antes</h3><p>Ejecuta pruebas y análisis de dependencias. Revisa cambios, permisos del pipeline y que el artefacto construido sea el que vas a desplegar.</p><ul><li>Pruebas pasan</li><li>Dependencias revisadas</li><li>Permisos mínimos</li></ul></article>
+            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">02</span><span class="deploy-icon" aria-hidden="true">⇧</span></div><h3>Publica con control</h3><p>Expón únicamente los puertos necesarios. Usa TLS en servicios publicados y limita el acceso administrativo.</p><ul><li>Puertos justificados</li><li>Acceso restringido</li><li>Configuración de producción</li></ul></article>
+            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">03</span><span class="deploy-icon" aria-hidden="true">◉</span></div><h3>Verifica y observa</h3><p>Confirma la salud del servicio y monitoriza disponibilidad y errores. Evita que los registros incluyan secretos.</p><ul><li>Health check responde</li><li>Alertas útiles</li><li>Logs sin datos sensibles</li></ul></article>
+            <article class="deploy-card"><div class="deploy-card-head"><span class="deploy-step">04</span><span class="deploy-icon" aria-hidden="true">↶</span></div><h3>Prepara la vuelta atrás</h3><p>Conserva una versión anterior identificable. Practica la reversión y verifica que las copias de seguridad se pueden restaurar.</p><ul><li>Versión identificable</li><li>Reversión ensayada</li><li>Restauración comprobada</li></ul></article>
           </div>
           <div class="quiz-wide">
-            <div><div class="eyebrow">PREGUNTA RÁPIDA</div><h3>¿Qué afirmación sobre publicar un puerto es correcta?</h3></div>
+            <div><div class="eyebrow">PREGUNTA RÁPIDA</div><h3 id="quiz-port-question">¿Qué afirmación sobre publicar un puerto es correcta?</h3></div>
             <form class="quiz quiz-inline" data-quiz="port">
-              <label class="quiz-option"><input type="radio" name="port" value="a"><span class="radio-dot"></span><span>Todo puerto expuesto en Docker queda accesible desde Internet.</span></label>
-              <label class="quiz-option"><input type="radio" name="port" value="b"><span class="radio-dot"></span><span>La accesibilidad depende también de cómo se mapea y de la red o plataforma.</span></label>
-              <label class="quiz-option"><input type="radio" name="port" value="c"><span class="radio-dot"></span><span>EXPOSE cifra el tráfico del puerto.</span></label>
+              <fieldset class="quiz-options quiz-options-inline" aria-labelledby="quiz-port-question">
+                <legend class="visually-hidden">Selecciona una respuesta</legend>
+                <label class="quiz-option"><input type="radio" name="port" value="a"><span class="radio-dot" aria-hidden="true"></span><span>Todo puerto expuesto en Docker queda accesible desde Internet.</span></label>
+                <label class="quiz-option"><input type="radio" name="port" value="b"><span class="radio-dot" aria-hidden="true"></span><span>La accesibilidad depende también de cómo se mapea y de la red o plataforma.</span></label>
+                <label class="quiz-option"><input type="radio" name="port" value="c"><span class="radio-dot" aria-hidden="true"></span><span>EXPOSE cifra el tráfico del puerto.</span></label>
+              </fieldset>
               <button class="button button-primary" type="submit">Comprobar</button>
-              <div class="quiz-feedback" aria-live="polite"></div>
+              <div class="quiz-feedback" role="status" aria-live="polite" aria-atomic="true"></div>
             </form>
           </div>
           <div class="check-row"><label><input class="progress-check" type="checkbox" data-progress="deploy"><span class="custom-check"></span><span>He revisado validación, exposición, observabilidad y reversión.</span></label></div>
@@ -242,7 +251,7 @@
             </ol>
           </div>
           <div class="success-card">
-            <div class="success-heading"><span class="success-check">✓</span><div><h3>Criterios de éxito</h3><p>Marca cada punto al comprobarlo.</p></div></div>
+            <div class="success-heading"><span class="success-check" aria-hidden="true">✓</span><div><h3>Criterios de éxito</h3><p>Marca cada punto al comprobarlo.</p></div></div>
             <label class="success-item"><input class="progress-check" type="checkbox" data-progress="base"><span class="custom-check"></span><span>La imagen usa una base concreta y mantenida, no una etiqueta mutable.</span></label>
             <label class="success-item"><input class="progress-check" type="checkbox" data-progress="nonroot"><span class="custom-check"></span><span>El proceso se ejecuta con un usuario sin privilegios.</span></label>
             <label class="success-item"><input class="progress-check" type="checkbox" data-progress="debug"><span class="custom-check"></span><span>Debug está desactivado y se usa un servidor WSGI apropiado.</span></label>
@@ -252,7 +261,7 @@
           </div>
         </div>
         <div class="reflection-card">
-          <span class="reflection-icon">✳</span>
+          <span class="reflection-icon" aria-hidden="true">✳</span>
           <div><h3>Reflexiona antes de darlo por terminado</h3><p>¿Qué ocurriría si alguien explotara una vulnerabilidad en tu aplicación? ¿Qué cambio limita mejor el impacto? ¿Qué comprobarías primero si el despliegue deja de responder?</p></div>
         </div>
       </section>
@@ -264,19 +273,20 @@
         </div>
         <div class="lab-grid">
           <article class="lab-card lab-start">
-            <div class="lab-icon">⌘</div><div class="eyebrow">EMPIEZA AQUÍ</div><h3>Abre el laboratorio</h3>
+            <div class="lab-icon" aria-hidden="true">⌘</div><div class="eyebrow">EMPIEZA AQUÍ</div><h3>Abre el laboratorio</h3>
             <p>Cuando el proyecto esté en tu cuenta o en la organización del centro, pulsa el botón para crear un Codespace. Necesitarás una cuenta de GitHub con acceso a Codespaces.</p>
-            <a class="button button-primary" href="https://github.com/codespaces" target="_blank" rel="noopener noreferrer">Ir a GitHub Codespaces <span aria-hidden="true">↗</span></a>
+            <a class="button button-primary" href="https://github.com/codespaces" target="_blank" rel="noopener noreferrer">Ir a GitHub Codespaces <span aria-hidden="true">↗</span><span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
             <p class="small-note">Busca el repositorio del curso y elige <strong>Code → Codespaces → Create codespace</strong>. Si ya tienes el repositorio clonado, ábrelo desde VS Code.</p>
           </article>
           <article class="lab-card">
-            <div class="lab-icon lab-icon-green">⌁</div><div class="eyebrow">DENTRO DEL CODESPACE</div><h3>Arranca la aplicación</h3>
+            <div class="lab-icon lab-icon-green" aria-hidden="true">⌁</div><div class="eyebrow">DENTRO DEL CODESPACE</div><h3>Arranca la aplicación</h3>
             <p>En la terminal integrada, desde la raíz del repositorio:</p>
-            <div class="command-block"><code>cd laboratorio<br>docker build -t flask-lab .<br>docker run --rm -p 127.0.0.1:5000:5000 flask-lab</code><button class="copy-button" type="button" data-copy="cd laboratorio&#10;docker build -t flask-lab .&#10;docker run --rm -p 127.0.0.1:5000:5000 flask-lab" aria-label="Copiar comandos">Copiar</button></div>
+            <div class="command-block"><code>cd laboratorio<br>docker build -t flask-lab .<br>docker run --rm -p 127.0.0.1:5000:5000 flask-lab</code><button class="copy-button" type="button" data-copy="cd laboratorio&#10;docker build -t flask-lab .&#10;docker run --rm -p 127.0.0.1:5000:5000 flask-lab">Copiar comandos</button></div>
+            <span class="visually-hidden" id="copy-status" role="status" aria-live="polite" aria-atomic="true"></span>
             <p class="small-note">La configuración inicial es deliberadamente mejorable. Ejecútala solo en el Codespace privado. Detén el proceso con <kbd>Ctrl</kbd> + <kbd>C</kbd>.</p>
           </article>
           <article class="lab-card">
-            <div class="lab-icon lab-icon-amber">!</div><div class="eyebrow">USO RESPONSABLE</div><h3>Solo en el entorno del curso</h3>
+            <div class="lab-icon lab-icon-amber" aria-hidden="true">!</div><div class="eyebrow">USO RESPONSABLE</div><h3>Solo en el entorno del curso</h3>
             <ul class="safety-list"><li>El proyecto es educativo y no contiene credenciales reales.</li><li>Mantén el puerto reenviado con visibilidad privada.</li><li>No despliegues la configuración inicial ni la dejes expuesta.</li><li>Al terminar, detén y elimina el Codespace si ya no lo necesitas.</li></ul>
             <p class="small-note">No pruebes cambios de seguridad en sistemas ajenos ni en servicios públicos.</p>
           </article>
@@ -284,7 +294,7 @@
       </section>
 
       <section class="completion-section">
-        <div class="completion-mark">✦</div>
+        <div class="completion-mark" aria-hidden="true">✦</div>
         <div><div class="eyebrow">UNIDAD COMPLETADA</div><h2>Seguro no es una casilla. Es una práctica.</h2><p>Recorre tu lista de criterios, vuelve a las respuestas si lo necesitas y anota qué revisarías en tu próximo despliegue real.</p></div>
         <a class="button button-outline" href="#inicio">Volver al inicio ↑</a>
       </section>

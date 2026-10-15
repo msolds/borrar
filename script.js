@@ -87,14 +87,13 @@
 
   document.querySelectorAll(".copy-button").forEach((button) => {
     button.addEventListener("click", async () => {
-      const originalLabel = button.textContent;
+      const status = document.querySelector("#copy-status");
       try {
         await navigator.clipboard.writeText(button.dataset.copy);
-        button.textContent = "Copiado";
+        status.textContent = "Comandos copiados al portapapeles.";
       } catch {
-        button.textContent = "Copia manual";
+        status.textContent = "No se pudieron copiar los comandos. Puedes seleccionarlos y copiarlos manualmente.";
       }
-      window.setTimeout(() => { button.textContent = originalLabel; }, 1800);
     });
   });
 
